@@ -1,0 +1,12 @@
+compile command 
+
+compile c target directly
+gcc test.c test_a.c test_b.c -o test
+
+compile libtest.so
+gcc test_a.c test_b.c -fPIC -shared -o libtest.so
+
+compile c target using libtest.so
+gcc test.c -L . -ltest -o test
+
+cp libtest.so /usr/lib/
